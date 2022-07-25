@@ -55,7 +55,7 @@ var removeDuplicates = function(nums) {
     // for i=0;  i < (arr.length-1); i++
     numberOfReplaces = 0;
     for(let i=0; i < (nums.length -1); i++){
-        // if i+1 == i   replace arr element with "_"  and calculate numberOfReplaces = numberOfReplaces + 1
+        // if element i+1 equals i,   replace arr element with 101(per task out of range to be at the end) and calculate numberOfReplaces = numberOfReplaces + 1
         if (nums[i+1] === nums[i]) {
             nums[i] = 101;
             //nums.splice((i-1), 1)
