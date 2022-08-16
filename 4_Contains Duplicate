@@ -32,7 +32,7 @@ var containsDuplicate = function(nums) {
     let uniqueNums = [...new Set(nums)];
     // compare orriginal and created arrays
       //if length of arr = length of uniqueArr, return false, else true
-    if (nums.length == uniqueNums.length){
+    if (nums.length === uniqueNums.length){
         return false
     }
     else
