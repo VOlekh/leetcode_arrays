@@ -1,0 +1,54 @@
+/**Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+ 
+
+Example 1:
+
+Input: nums = [2,2,1]
+Output: 1
+Example 2:
+
+Input: nums = [4,1,2,1,2]
+Output: 4
+Example 3:
+
+Input: nums = [1]
+Output: 1
+ 
+
+Constraints:
+
+1 <= nums.length <= 3 * 104
+-3 * 104 <= nums[i] <= 3 * 104
+Each element in the array appears twice except for one element which appears only once.
+ */
+ 
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function(nums) {
+    let i;
+    let j;
+    let result;
+    // make 2 loops i and j , compare each element i with j, excluding itself
+    //loop 1
+    for ( i = 0; i <= nums.length-1; i++) {
+        //loop 2
+        for ( j = 0; j <= nums.length -1; j++) {
+            //exclude self comparision
+            //if element has duplicate break loop
+            if (i != j && nums[i] == nums[j]) {
+                break;
+            }
+        }
+        // if end of 2d arr and no break add 
+        if (j == nums.length){
+            return nums[i];
+        }
+    }    
+};
+
+//comments: result = []; result.push(arr[i]); return result
