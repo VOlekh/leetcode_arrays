@@ -56,3 +56,33 @@ var rotate = function(nums, k) {
 
      return nums
 };
+______________________________________________
+2d solution correct but unacceptable due to mutation 
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var rotate = function(nums, k) {
+    //cut tail add to the begiining of arr, remove tail
+    const tail = nums.slice(-k);
+    console.log('tail:', tail);
+    const head = nums.slice(0,-k);
+    console.log('head:', head);
+    let result = tail.concat(head);
+    console.log('result:', result);
+}
+
+
+Your input
+[1,2,3,4,5,6,7]
+3
+Your stdout
+tail: [ 5, 6, 7 ]
+head: [ 1, 2, 3, 4 ]
+result: [  5, 6, 7, 1, 2, 3, 4 ]
+
+Your answer
+[1,2,3,4,5,6,7]
+Expected answer
+[5,6,7,1,2,3,4]
